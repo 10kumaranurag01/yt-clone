@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+$hover: red;
+
+.livestream-btn {
+  padding: 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: black;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  color: red;
+}
+
+.livestream-btn:hover {
+  background-color: red;
+  color: white;
+}
+
+.container-livestream {
+  height: 91.5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.create-meeting-btn {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.create-meeting-btn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.create-meeting-btn:active {
+  color: #000;
+}
+
+.create-meeting-btn:active:after {
+  background: transparent;
+}
+
+.create-meeting-btn:hover:before {
+  opacity: 1;
+}
+
+.create-meeting-btn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.or {
+  color: white;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+}
+
+.streamid-input {
+  border: none;
+  outline: none;
+  text-align: center;
+  height: 50px;
+  width: 200px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+.streamid-input::placeholder {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.join-btns-wrapper {
+  width: 20em;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.join-btn {
+  outline: none;
+  border: none;
+  background-color: white;
+  color: black;
+  font-family: "Roboto";
+  height: 50px;
+  width: 150px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 0 0.5rem;
+}
+
+.join-btn:hover,
+.join-btn:focus {
+  box-shadow: 0 0.7em 0.9em -0.4em red;
+  transform: translateY(-0.25em);
+}
+
+/* container */
+
+.stream-id {
+  color: white;
+  background-color: rgb(53, 51, 51);
+  font-size: 2rem;
+  height: 1.2em;
+  width: 14em;
+  text-align: center;
+  padding: 0.5em;
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.joining-meeting {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+}
+
+/* Speakerview */
+
+.hls-state {
+  color: whitesmoke;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* ViewerView */
+.viewer-video {
+  height: 20rem;
+  width: 40rem;
+}
+
+.viewer-view-stream-info {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+}
+
+/* ParticipantView */
+
+.participant-view {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(48, 48, 48);
+  margin-top: 1em;
+  padding: 2em;
+  border-radius: 10px;
+  height: 300px;
+}
+
+.participant-view-info {
+  color: whitesmoke;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+}
+
+/* Controls */
+.toggle-mic {
+  text-align: center;
+  position: relative;
+  svg {
+    position: absolute;
+    color: #ff0000;
+    top: 13px;
+    margin-left: 3px;
+  }
+}
+
+.toggle-webcam {
+  text-align: center;
+  position: relative;
+  svg {
+    position: absolute;
+    color: #ff0000;
+    top: 14px;
+    margin-left: 3px;
+  }
+}
+
+.pipe {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.leave-btn {
+  color: white;
+  background-color: #ff0000;
+}
+
+.leave-btn:hover,
+.leave-btn:focus {
+  box-shadow: 0 0.7em 0.9em -0.4em white;
+  transform: translateY(-0.25em);
+}
